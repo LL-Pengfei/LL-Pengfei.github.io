@@ -1,4 +1,4 @@
-You have stumbled upon the git repo for Pengfei's blog. You are not meant to read the blog posts from this repo directly. Please access [here](LL-Pengfei.github.io) to view my blog the way it should be viewed :)
+You have stumbled upon the git repo for Pengfei's blog. You are not meant to read the blog posts from this repo directly. Please access [here](https://LL-Pengfei.github.io) to view my blog the way it should be viewed :)
 
 -- original readme --
 # gitblog
