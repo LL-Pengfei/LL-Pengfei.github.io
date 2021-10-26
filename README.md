@@ -1,3 +1,7 @@
+You have stumbled upon the git repo for Pengfei's blog. You are not meant to read the blog posts from this repo directly. Please head to:
+LL-Pengfei.github.io to view my blog the way it should be viewed :)
+
+-- original readme --
 # gitblog
 这是一个极轻量级的，基于git issue的个人博客模板，非常适合于想在GitHub pages上搭建个人博客的人。
 
