@@ -60,7 +60,7 @@ var gitblog = function(config) {
         hour = (hour<10)?'0'+hour:hour;
         minute = (minute<10)?'0'+minute:minute;
         second = (second<10)?'0'+second:second;
-        return year+'年'+month+'月'+date+'日'+' '+hour+':'+minute+':'+second;
+        return year+'/'+month+'/'+date+' '+hour+':'+minute+':'+second;
     }
 
     String.prototype.replaceAll = function(a, b) {
@@ -96,7 +96,7 @@ var gitblog = function(config) {
             }
             if (Object.keys(config.friends).length != 0) {
                 var menu_friend = document.getElementById("friends");
-                menu_friend.innerHTML = '<li><text style="font-zise:14px"><span style="color: white;transform:translateX(4px)">友链：</span></text></li>';
+                menu_friend.innerHTML = '<li><text style="font-zise:14px"><span style="color: white;transform:translateX(4px)">Link：</span></text></li>';
                 for (var name in config.friends) {
                     menu_friend.innerHTML += '<li><a href=' + config.friends[name] + ' target="_blank"><span>' + name + '</span></a></li>';
                 }
@@ -313,7 +313,7 @@ var gitblog = function(config) {
             var reaction = this;
             if (reaction.isLike == true) return;
             if (window.localStorage.access_token == undefined || window.localStorage.access_token == null) {
-                alert("请先登录！");
+                alert("Please log in!");
                 return;
             }
             var request_url = '';
@@ -431,9 +431,9 @@ var gitblog = function(config) {
 
             var login = document.getElementById('login');
             if (comment.login == false) {
-                login.innerHTML = '<a class="gitment-editor-login-link" id="log">登入</a> with GitHub';
+                login.innerHTML = '<a class="gitment-editor-login-link" id="log">Log in</a> with GitHub';
             } else {
-                login.innerHTML = '<a class="gitment-editor-login-link" id="log">登出</a>';
+                login.innerHTML = '<a class="gitment-editor-login-link" id="log">Log out</a>';
             }
 
             document.getElementById('log').onclick = function() {
@@ -446,10 +446,10 @@ var gitblog = function(config) {
 
             var editor_content = document.getElementById('write-field');
             if (comment.login == false) {
-                editor_content.innerHTML = '<textarea placeholder="(发表评论)" title="请登入以发表评论" disabled id="comment-input"></textarea>';
+                editor_content.innerHTML = '<textarea placeholder="Leave a comment" title="Please log in to leave a comment" disabled id="comment-input"></textarea>';
                 $('.gitment-editor-submit').attr("disabled", true);
             } else {
-                editor_content.innerHTML = '<textarea placeholder="(发表评论)" id="comment-input"></textarea>';
+                editor_content.innerHTML = '<textarea placeholder="Leave a comment" id="comment-input"></textarea>';
                 $('.gitment-editor-submit').attr("disabled", false);
             }
 
@@ -493,7 +493,7 @@ var gitblog = function(config) {
                         window.localStorage.setItem('authorize', btoa(data.login + ':' + window.localStorage.access_token));
                     },
                     error: function() {
-                        console.log("用户信息过期，退出登录状态");
+                        console.log("User Credentials Outdated. Logging out.");
                         comment.logout();
                     }
                 });
@@ -512,9 +512,9 @@ var gitblog = function(config) {
             var preview_content = document.getElementById('preview-content');
             var comment_input = document.getElementById('comment-input').value;
             if (comment_input == "") {
-                preview_content.innerHTML = '（没有预览）';
+                preview_content.innerHTML = 'Nothing to preview';
             } else {
-                preview_content.innerHTML = '预览加载中';
+                preview_content.innerHTML = 'Loading preview';
                 $.ajax({
                     type: "post",
                     url: 'https://api.github.com/markdown',
