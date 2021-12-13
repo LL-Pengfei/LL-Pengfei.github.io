@@ -4,7 +4,7 @@
     "client_id": "81dabf328c6ee99813f8",
     "client_secret": "82faad0512ec9d396964b218832a11a0972a2720",
     "title": "Pengfei's personal blog",
-    "instruction": "You have stumbled upon Pengfei's personal blog. It is simply a platform for me to share my own personal experience and insights, and I do not expect high viewership. My current estimate is that I will be publishing 2 ~ 5 blog posts here annually. You may go to the git repo and watch the repo to receive notifications on updates if you are interested.",
+    "instruction": "You have stumbled upon Pengfei's personal blog. It is simply a platform for me to share my own personal experience and insights, and I do not expect high viewership.\\n My current estimate is that I will be publishing 2 ~ 5 blog posts here annually. You may go to the git repo and watch the repo to receive notifications on updates if you are interested.",
     "server_link": "http://119.23.8.25/gh-oauth-server.php",
     "filter": {
         "creator": "LL-Pengfei",
